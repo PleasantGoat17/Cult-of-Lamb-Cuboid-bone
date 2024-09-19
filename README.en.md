@@ -62,6 +62,10 @@ images/
 
 - **Author**: Lau Zega / PleasantGoat17
 
+## Disclaimer
+
+This software includes artwork from the game Cult of the Lamb. This is a non-profit project, and all rights to the artwork belong to Cult of the Lamb and its rightful owners. The use of this material is solely for personal and non-commercial purposes. Any unauthorized reproduction, distribution, or commercial use may infringe on copyright. If you have any questions or concerns regarding copyright, please contact us.
+
 ## License
 
 This project has no specified license. Please contact the author for more details.
