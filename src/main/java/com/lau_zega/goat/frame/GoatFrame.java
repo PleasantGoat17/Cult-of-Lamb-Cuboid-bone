@@ -108,48 +108,48 @@ public class GoatFrame extends JFrame implements MouseListener {
             g2.drawImage(option_throw,1010,520,this);
             g2.drawImage(option_restart,1010,610,this);
 
-            // 绘制红方骰子
-            int piece_x,piece_y;
-            for (int i = 0; i < 3; i++) {
-                piece_x = i * 122 + 498;
-                for (int j = 0; j < 3; j++) {
-                    piece_y = 231 - j * 78;
-                    if (RedDicePoint[i][j] != 0) {
-                        drawDices(g2, RedDicePoint[i][j], piece_x, piece_y, RedDiceStatus[i][j]);
-                    }
+        // 绘制红方骰子
+        int piece_x,piece_y;
+        for (int i = 0; i < 3; i++) {
+            piece_x = i * 122 + 498;
+            for (int j = 0; j < 3; j++) {
+                piece_y = 231 - j * 78;
+                if (RedDicePoint[i][j] != 0) {
+                    drawDices(g2, RedDicePoint[i][j], piece_x, piece_y, RedDiceStatus[i][j]);
                 }
             }
-            // 绘制蓝方骰子
-            for (int i = 0; i < 3; i++) {
-                piece_x = i * 120 + 500;
-                for (int j = 0; j < 3; j++) {
-                    piece_y = j * 78 + 483;
-                    if (BlueDicePoint[i][j] != 0) {
-                        drawDices(g2, BlueDicePoint[i][j], piece_x, piece_y, BlueDiceStatus[i][j]);
-                    }
+        }
+        // 绘制蓝方骰子
+        for (int i = 0; i < 3; i++) {
+            piece_x = i * 120 + 500;
+            for (int j = 0; j < 3; j++) {
+                piece_y = j * 78 + 483;
+                if (BlueDicePoint[i][j] != 0) {
+                    drawDices(g2, BlueDicePoint[i][j], piece_x, piece_y, BlueDiceStatus[i][j]);
                 }
             }
-            if(isGetDice) {
-                if (!isBlue) {
-                    drawDices(g2, point_temp, 1083, 132, 1);
-                } else {
-                    drawDices(g2, point_temp, 158, 575, 1);
-                }
+        }
+        if(isGetDice) {
+            if (!isBlue) {
+                drawDices(g2, point_temp, 1083, 132, 1);
+            } else {
+                drawDices(g2, point_temp, 158, 575, 1);
             }
+        }
 
-            // 游戏提示信息
-            g2.setFont(new Font("黑体",Font.PLAIN,40));//设置字体
-            g2.setColor(Color.white);//设置红色
-            g2.drawString(message,569,393);
+        // 游戏提示信息
+        g2.setFont(new Font("黑体",Font.PLAIN,40));//设置字体
+        g2.setColor(Color.white);//设置红色
+        g2.drawString(message,569,393);
 
-            g2.setFont(new Font("黑体",Font.PLAIN,25));
-            if(BlueScore!=0)
-            {
-                g2.drawString(Integer.toString(BlueScore),184,513);
-            }
-            if(RedScore!=0){
-                g2.drawString(Integer.toString(RedScore),1113,513);
-            }
+        g2.setFont(new Font("黑体",Font.PLAIN,25));
+        if(BlueScore!=0)
+        {
+            g2.drawString(Integer.toString(BlueScore),184,513);
+        }
+        if(RedScore!=0){
+            g2.drawString(Integer.toString(RedScore),1113,513);
+        }
         }
         g.drawImage(bi,0,0,this);
     }
@@ -182,11 +182,11 @@ public class GoatFrame extends JFrame implements MouseListener {
         {
             // 开始游戏和重新开始
             if (x >= 555 && x <= 755 && y >= 545 && y <= 595) {
-                message = "圣羊先掷骰";
-                isBlue = true;
-                game_status = 1;
-                System.out.println("开始游戏");
-                this.repaint();
+            message = "圣羊先掷骰";
+            isBlue = true;
+            game_status = 1;
+            System.out.println("开始游戏");
+            this.repaint();
             }
             else {
                 System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
@@ -343,7 +343,7 @@ public class GoatFrame extends JFrame implements MouseListener {
             }
         }
         else {
-            System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
+                System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
         }
     }
 

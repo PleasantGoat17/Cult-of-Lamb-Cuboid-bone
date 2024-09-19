@@ -59,16 +59,18 @@
   - 点击“重开游戏”按钮可重置游戏状态。
 
 
-
   ## 开发者
 
   - **作者**: Lau Zega / PleasantGoat17
 
+  ## 游戏界面截图
+
+  ![picture_1](https://img.picui.cn/free/2024/09/19/66ebdc7da1cb9.png)
+  ![picture_2](https://img.picui.cn/free/2024/09/19/66ebdb8f3f978.png)
+  ![picture_3](https://img.picui.cn/free/2024/09/19/66ebdbe5bcd62.png) 
+  ![picture_4](https://img.picui.cn/free/2024/09/19/66ebdc7e4d7e5.png)   
+  
 
   ## 免责声明
 
   本软件中使用了部分来自《咩咩启示录》游戏的艺术作品。本软件为非盈利项目，所有相关艺术作品及其著作权均归《咩咩启示录》及其版权所有者所有。本软件的使用仅为个人和非商业用途，任何未经授权的复制、分发或商业使用均可能侵犯版权。如有任何疑问或版权相关问题，请与我们联系。
-
-  ## 许可证
-
-  该项目没有指定许可证，请联系作者了解更多信息。

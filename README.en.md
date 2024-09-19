@@ -1,6 +1,6 @@
-# Goat Apocalypse - Astragalus Dice
+# Cult of Lamb - Astragalus Dice
 
-This is a Java Swing-based desktop game simulating a two-player battle called "Goat Apocalypse - Astragalus Dice". Players take turns playing as either the Blue or Red faction, rolling dice and competing for points to determine the winner.
+This is a Java Swing-based desktop game simulating a two-player battle called "Cult of Lamb - Astragalus Dice". Players take turns playing as either the Blue or Red faction, rolling dice and competing for points to determine the winner.
 
 ## Game Rules
 
@@ -62,10 +62,13 @@ images/
 
 - **Author**: Lau Zega / PleasantGoat17
 
+## Game Frame
+
+  ![picture_1](https://img.picui.cn/free/2024/09/19/66ebdc7da1cb9.png)
+  ![picture_2](https://img.picui.cn/free/2024/09/19/66ebdb8f3f978.png)
+  ![picture_3](https://img.picui.cn/free/2024/09/19/66ebdbe5bcd62.png) 
+  ![picture_4](https://img.picui.cn/free/2024/09/19/66ebdc7e4d7e5.png)  
+
 ## Disclaimer
 
 This software includes artwork from the game Cult of the Lamb. This is a non-profit project, and all rights to the artwork belong to Cult of the Lamb and its rightful owners. The use of this material is solely for personal and non-commercial purposes. Any unauthorized reproduction, distribution, or commercial use may infringe on copyright. If you have any questions or concerns regarding copyright, please contact us.
-
-## License
-
-This project has no specified license. Please contact the author for more details.
