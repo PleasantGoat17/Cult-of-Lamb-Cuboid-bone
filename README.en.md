@@ -2,7 +2,7 @@
 
 This is a Java Swing-based desktop game simulating a two-player battle called "Cult of Lamb - Astragalus Dice". Players take turns playing as either the Blue or Red faction, rolling dice and competing for points to determine the winner.
 
-[中文版：](README.md)
+[点这里阅读中文版](README.md)
 
 ## Game Rules
 

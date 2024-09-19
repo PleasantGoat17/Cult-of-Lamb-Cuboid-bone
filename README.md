@@ -2,7 +2,7 @@
 
   这是一个基于 Java Swing 的桌面游戏应用，模拟了一场名为「咩咩启示录 - 距骨骰」的两方对战游戏，玩家分别扮演蓝方和红方，通过掷骰子进行游戏，最终比拼得分来决定胜负。
 
-  [English Version: ](README.en.md)
+  [Click here read English version](README.en.md)
 
   ## 游戏规则
 
