@@ -108,48 +108,48 @@ public class GoatFrame extends JFrame implements MouseListener {
             g2.drawImage(option_throw,1010,520,this);
             g2.drawImage(option_restart,1010,610,this);
 
-        // 绘制红方骰子
-        int piece_x,piece_y;
-        for (int i = 0; i < 3; i++) {
-            piece_x = i * 122 + 498;
-            for (int j = 0; j < 3; j++) {
-                piece_y = 231 - j * 78;
-                if (RedDicePoint[i][j] != 0) {
-                    drawDices(g2, RedDicePoint[i][j], piece_x, piece_y, RedDiceStatus[i][j]);
+            // 绘制红方骰子
+            int piece_x,piece_y;
+            for (int i = 0; i < 3; i++) {
+                piece_x = i * 122 + 498;
+                for (int j = 0; j < 3; j++) {
+                    piece_y = 231 - j * 78;
+                    if (RedDicePoint[i][j] != 0) {
+                        drawDices(g2, RedDicePoint[i][j], piece_x, piece_y, RedDiceStatus[i][j]);
+                    }
                 }
             }
-        }
-        // 绘制蓝方骰子
-        for (int i = 0; i < 3; i++) {
-            piece_x = i * 120 + 500;
-            for (int j = 0; j < 3; j++) {
-                piece_y = j * 78 + 483;
-                if (BlueDicePoint[i][j] != 0) {
-                    drawDices(g2, BlueDicePoint[i][j], piece_x, piece_y, BlueDiceStatus[i][j]);
+            // 绘制蓝方骰子
+            for (int i = 0; i < 3; i++) {
+                piece_x = i * 120 + 500;
+                for (int j = 0; j < 3; j++) {
+                    piece_y = j * 78 + 483;
+                    if (BlueDicePoint[i][j] != 0) {
+                        drawDices(g2, BlueDicePoint[i][j], piece_x, piece_y, BlueDiceStatus[i][j]);
+                    }
                 }
             }
-        }
-        if(isGetDice) {
-            if (!isBlue) {
-                drawDices(g2, point_temp, 1083, 132, 1);
-            } else {
-                drawDices(g2, point_temp, 158, 575, 1);
+            if(isGetDice) {
+                if (!isBlue) {
+                    drawDices(g2, point_temp, 1083, 132, 1);
+                } else {
+                    drawDices(g2, point_temp, 158, 575, 1);
+                }
             }
-        }
 
-        // 游戏提示信息
-        g2.setFont(new Font("黑体",Font.PLAIN,40));//设置字体
-        g2.setColor(Color.white);//设置红色
-        g2.drawString(message,569,393);
+            // 游戏提示信息
+            g2.setFont(new Font("黑体",Font.PLAIN,40));//设置字体
+            g2.setColor(Color.white);//设置红色
+            g2.drawString(message,569,393);
 
-        g2.setFont(new Font("黑体",Font.PLAIN,25));
-        if(BlueScore!=0)
-        {
-            g2.drawString(Integer.toString(BlueScore),184,513);
-        }
-        if(RedScore!=0){
-            g2.drawString(Integer.toString(RedScore),1113,513);
-        }
+            g2.setFont(new Font("黑体",Font.PLAIN,25));
+            if(BlueScore!=0)
+            {
+                g2.drawString(Integer.toString(BlueScore),184,513);
+            }
+            if(RedScore!=0){
+                g2.drawString(Integer.toString(RedScore),1113,513);
+            }
         }
         g.drawImage(bi,0,0,this);
     }
@@ -166,27 +166,38 @@ public class GoatFrame extends JFrame implements MouseListener {
     public void mousePressed(MouseEvent e) {
         x = e.getX();
         y = e.getY();
-        if(game_status == 0) {
-            // 开始游戏和重新开始游戏
+        // 退出游戏
+        if (x >= 140 && x <= 220 && y >= 705 && y <= 740)
+        {
+            int result = JOptionPane.showConfirmDialog(this,"是否退出游戏");
+            if (result == 0) {
+                System.exit(0);
+            }
+            else
+            {
+                System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
+            }
+        }
+        if(game_status == 0)
+        {
+            // 开始游戏和重新开始
             if (x >= 555 && x <= 755 && y >= 545 && y <= 595) {
-            message = "圣羊先掷骰";
-            isBlue = true;
-            game_status = 1;
-            System.out.println("开始游戏");
-            this.repaint();
+                message = "圣羊先掷骰";
+                isBlue = true;
+                game_status = 1;
+                System.out.println("开始游戏");
+                this.repaint();
             }
             else {
                 System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
             }
         }
         // 已经开始后
-        if (game_status == 1) {
+        else if (game_status == 1)
+        {
             if (x >= 483 && x <= 828 && y >= 74 && y <= 710) {
-                // 每格45像素
                 int i = (x - 483) / 113;
-                // 记录棋子位置
                 if (i < 3 && isGetDice) {
-                    // 判断要下的是什么棋子
                     if (isBlue) {
                         if(isEmptyRow(BlueDicePoint[i]))
                         {
@@ -205,7 +216,7 @@ public class GoatFrame extends JFrame implements MouseListener {
 
                             reCountPoints(BlueDicePoint,BlueDiceStatus,isBlue);
                             message = "拉陶掷骰。";
-                            CheckAlleys_test();
+//                            CheckAlleys_test();
                             checkWin();
                             isGetDice = !isGetDice;
                             point_temp = 0;
@@ -233,7 +244,7 @@ public class GoatFrame extends JFrame implements MouseListener {
                             }
                             reCountPoints(RedDicePoint,RedDiceStatus,isBlue);
                             message = "圣羊掷骰。";
-                            CheckAlleys_test();
+//                            CheckAlleys_test();
                             checkWin();
                             isGetDice = !isGetDice;
                             point_temp = 0;
@@ -299,7 +310,7 @@ public class GoatFrame extends JFrame implements MouseListener {
                 System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
             }
         }
-        if (game_status == 2)
+        else if (game_status == 2)
         {
             if(x >= 1013 && x <= 1225 && y >= 616 && y <= 664)
             {
@@ -332,19 +343,7 @@ public class GoatFrame extends JFrame implements MouseListener {
             }
         }
         else {
-                System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
-        }
-
-        // 退出游戏
-        if (x >= 140 && x <= 220 && y >= 705 && y <= 740) {
-            int result = JOptionPane.showConfirmDialog(this,"是否退出游戏");
-            if (result == 0) {
-                System.exit(0);
-            }
-            else
-            {
-                System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
-            }
+            System.out.println("鼠标点击的坐标为[x:"+x+",y:"+y+"]，无操作。");
         }
     }
 
@@ -412,7 +411,8 @@ public class GoatFrame extends JFrame implements MouseListener {
         }
     }
 
-    public void drawDices(Graphics g, int point, int x, int y,int status) {
+    public void drawDices(Graphics g, int point, int x, int y,int status)
+    {
         Image dice = null;
         String path = "images/dices";
         if(status<1||status>3||point<1||point>6)return;
@@ -426,7 +426,8 @@ public class GoatFrame extends JFrame implements MouseListener {
         g.drawImage(dice,x,y,this);
     }
 
-    public String DiceStatus(int status,String path) {
+    public String DiceStatus(int status,String path)
+    {
         switch (status)
         {
             case 1: path = path + "/white/dice_";break; // 普通白色骰子
@@ -436,7 +437,8 @@ public class GoatFrame extends JFrame implements MouseListener {
         return path;
     }
 
-    public boolean isEmptyRow(int[] dice){
+    public boolean isEmptyRow(int[] dice)
+    {
         for(int i = 0;i<3;i++)
         {
             if(dice[i]==0)
@@ -482,7 +484,8 @@ public class GoatFrame extends JFrame implements MouseListener {
         return status;
     }
 
-    public int setDice(int[] dice){
+    public int setDice(int[] dice)
+    {
         for(int i = 0;i<3;i++)
         {
             if(dice[i] == 0)
@@ -493,27 +496,27 @@ public class GoatFrame extends JFrame implements MouseListener {
         return -1;
     }
 
-    public void CheckAlleys_test()
-    {
-        System.out.println("红色：");
-        for(int i = 0;i<3;i++)
-        {
-            for(int j = 0;j<3;j++)
-            {
-                System.out.print(RedDicePoint[j][i]+" ");
-            }
-            System.out.println();
-        }
-        System.out.println("蓝色：");
-        for(int i = 0;i<3;i++)
-        {
-            for(int j = 0;j<3;j++)
-            {
-                System.out.print(BlueDicePoint[j][i]+" ");
-            }
-            System.out.println();
-        }
-    }
+//    public void CheckAlleys_test()
+//    {
+//        System.out.println("红色：");
+//        for(int i = 0;i<3;i++)
+//        {
+//            for(int j = 0;j<3;j++)
+//            {
+//                System.out.print(RedDicePoint[j][i]+" ");
+//            }
+//            System.out.println();
+//        }
+//        System.out.println("蓝色：");
+//        for(int i = 0;i<3;i++)
+//        {
+//            for(int j = 0;j<3;j++)
+//            {
+//                System.out.print(BlueDicePoint[j][i]+" ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
     public void reCountPoints(int[][] dice,int[][] status,boolean color)
     {
